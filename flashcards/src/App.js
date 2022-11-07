@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Card from './Components/CardContainer/CardViewer/Card/Card';
 
 function App() {
 
@@ -6,19 +7,7 @@ function App() {
 
   return (
     <div>
-      <table>
-        <tbody>
-          {flashcards.map((info, index)=>{
-            return (
-              <tr>
-                <td>{index+1}</td>
-                <td>{info.word}</td>
-                <td>{info.definition}</td>
-              </tr>
-            )
-          })}
-        </tbody>
-      </table>
+      <Card flashcards={flashcards}/>
     </div>
   );
 }
