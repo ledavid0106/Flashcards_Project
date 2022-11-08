@@ -3,10 +3,9 @@ const Card = (flashcards) => {
     return ( 
         <table>
             <tbody>
-            {flashcards.flashcards.map((info, index)=>{
-                return (
+            {flashcards.flashcards.map((info)=>{
+                return (    
                 <tr>
-                    <td>{index+1}</td>
                     <td>{info.word}</td>
                     <td>{info.definition}</td>
                 </tr>
