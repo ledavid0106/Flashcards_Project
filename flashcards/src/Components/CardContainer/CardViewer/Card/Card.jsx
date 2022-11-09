@@ -1,12 +1,12 @@
 
 
 
+const Card = ({flashcards}) => {
 
-const Card = (flashcards) => {
     return ( 
         <table>
             <tbody>
-            {flashcards.flashcards.map((info)=>{
+            {flashcards.map((info)=>{
                 return (    
                 <tr>
                     <td>{info.word}</td>
