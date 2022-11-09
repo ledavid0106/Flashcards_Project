@@ -5,23 +5,26 @@ import Card from './Components/CardContainer/CardViewer/Card/Card';
 import Header from './Components/Header/Header';
 
 function App() {
-
+    const [collections,setCollections] = useState([]);
     const [flashcards, setFlashcards] = useState([])
 
     useEffect(()=>{
-      getAllCards();
+      getAllCollections();
     },[]);
-    async function getAllCards() {
-      const response = await axios.get('http://127.0.0.1:8000/api/collections/1/cards/')
+
+    async function getAllCollections() {
+      const response = await axios.get('http://127.0.0.1:8000/api/collections/')
       setFlashcards(response.data)
     }
-
+    async function getFlashcards(collectionID) {
+      let endpoint = 'http://127.0.0.1:8000/api/collections/' + collectionID +'/cards/';
+      const response = await axios.get(endpoint);
+      setFlashcards(response.endpoint)
+    }
 
   return (
     <div>
       <Header/>
-      <Card flashcards={flashcards} setFlashcards={setFlashcards}/>
-      
     </div>
     
   );
