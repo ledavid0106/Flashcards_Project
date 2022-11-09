@@ -17,7 +17,7 @@ function App() {
 
     async function getAllCollections() {
       const response = await axios.get('http://127.0.0.1:8000/api/collections/')
-      setFlashcards(response.data)
+      setCollections(response.data)
     }
     async function getFlashcards(collectionID) {
       let endpoint = 'http://127.0.0.1:8000/api/collections/' + collectionID +'/cards/';
@@ -25,12 +25,27 @@ function App() {
       setFlashcards(response.data)
     }
 
+    const setCurrentSelections = (collection) => {
+      setCurrentCollection(collection);
+      getFlashcards(collection.id);
+  }
+    const changeCard = (change) => {
+      if (flashcards.length){
+        let result = currentCard + change;
+        if (result > flashcards.length){ setCurrentCard(0)}
+        else if ( result < 0 ){ setCurrentCard(flashcards.length)}
+        else { setCurrentCard(result)}
+      }
+    }
+
+
+
   return (
     <div>
       <Header/>
-      <div>PREV</div>
+      <div onClick = {changeCard(-1)}>PREV</div>
       <CardNumber flashcards={flashcards} currentCollection = {currentCollection} currentCard = {currentCard} />
-      <div>NEXT</div>
+      <div onClick = {changeCard(1)}>NEXT</div>
     </div>
     
   );
