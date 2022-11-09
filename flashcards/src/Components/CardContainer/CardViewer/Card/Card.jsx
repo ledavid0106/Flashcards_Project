@@ -1,4 +1,7 @@
 
+
+
+
 const Card = (flashcards) => {
     return ( 
         <table>
