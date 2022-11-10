@@ -5,12 +5,15 @@ const Header = (prop) => {
     return ( 
         <div >
             <div >Flashcards</div>
-            <div >
-                <div>Add Card</div>
-                <div>Edit Card</div>
-                <div>Delete Card</div>
-            </div>
-            <div></div>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Add Card</td>
+                        <td>Edit Card</td>
+                        <td>Delete Card</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
      );
 }

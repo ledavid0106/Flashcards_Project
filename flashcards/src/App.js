@@ -3,12 +3,14 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Card from './Components/CardContainer/CardViewer/Card/Card';
 import CardNumber from './Components/CardContainer/CardViewer/CardNumber/CardNumber';
+import NextPrev from './Components/CardContainer/CardViewer/PrevNext/PrevNext';
 import Header from './Components/Header/Header';
+import CollectionBar from './Components/SideBar/CollectionContainer/CollectionContainer';
 
 function App() {
     const [collections,setCollections] = useState([]);
-    const [flashcards, setFlashcards] = useState([])
-    const [currentCollection,setCurrentCollection] = useState(1);
+    const [flashcards, setFlashcards] = useState([{word:"",definition: ""}])
+    const [currentCollection,setCurrentCollection] = useState({id: 0 ,title:''});
     const [currentCard, setCurrentCard] = useState(0)
 
     useEffect(()=>{
@@ -28,24 +30,36 @@ function App() {
     const setCurrentSelections = (collection) => {
       setCurrentCollection(collection);
       getFlashcards(collection.id);
-  }
-    const changeCard = (change) => {
-      if (flashcards.length){
-        let result = currentCard + change;
-        if (result > flashcards.length){ setCurrentCard(0)}
-        else if ( result < 0 ){ setCurrentCard(flashcards.length)}
-        else { setCurrentCard(result)}
-      }
+      setCurrentCard(0);
+
+    }
+    const nextFlashcard = () => {
+      let result = currentCard + 1;
+      if (result+1 > flashcards.length){setCurrentCard(0);}
+      else { setCurrentCard(result);}
     }
 
-
+    const prevFlashcard = () => {
+      let result = currentCard - 1;
+      let length = flashcards.length;
+      if ( result < 0 ){ setCurrentCard(length-1);}
+      else { setCurrentCard(result);}
+    }
 
   return (
     <div>
+      <CollectionBar setCurrentSelections={setCurrentSelections} collections={collections} currentCollection = {currentCollection} />
       <Header/>
-      <div onClick = {changeCard(-1)}>PREV</div>
-      <CardNumber flashcards={flashcards} currentCollection = {currentCollection} currentCard = {currentCard} />
-      <div onClick = {changeCard(1)}>NEXT</div>
+      <Card flashcards={flashcards} currentCard={currentCard}/>
+      <table>
+        <tbody>
+          <tr>
+            <td><NextPrev setCurrentCard={setCurrentCard} flashcards = {flashcards} currentCard = {currentCard} click = {prevFlashcard} text = 'PREV'></NextPrev></td>
+            <td><CardNumber flashcards={flashcards} currentCollection = {currentCollection} currentCard = {currentCard} /></td>
+            <td><NextPrev setCurrentCard={setCurrentCard} flashcards = {flashcards} currentCard = {currentCard} click = {nextFlashcard} text = 'NEXT'></NextPrev></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     
   );
