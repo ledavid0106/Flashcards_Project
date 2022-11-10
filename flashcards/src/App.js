@@ -48,7 +48,9 @@ function App() {
   return (
     <div>
       <CollectionBar setCurrentSelections={setCurrentSelections} collections={collections} currentCollection = {currentCollection} />
-      <Header getFlashcards={getFlashcards} setCurrentSelections={setCurrentSelections} collections={collections} currentCollection = {currentCollection} flashcards={flashcards}/>
+      <Header getFlashcards={getFlashcards} getAllCollections = {getAllCollections} setCurrentSelections={setCurrentSelections} 
+          collections={collections} setCurrentCard = {setCurrentCard} 
+          currentCollection = {currentCollection} setCurrentCollection = {setCurrentCollection}/>
       <Card flashcards={flashcards} currentCard={currentCard}/>
       <table>
         <tbody>

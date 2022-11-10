@@ -40,7 +40,7 @@ const AddCard = ({close, addCard, currentCollection, display, noClose}) => {
     </form>
     ): 
         <form>
-        <h4>Please Select a Collection First</h4>
+        <h4>Select a Collection</h4>
         <button onClick = {close}>Close</button>
         </form>
 }
