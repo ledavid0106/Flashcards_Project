@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Card from './Components/CardContainer/CardViewer/Card/Card';
@@ -49,7 +48,7 @@ function App() {
   return (
     <div>
       <CollectionBar setCurrentSelections={setCurrentSelections} collections={collections} currentCollection = {currentCollection} />
-      <Header/>
+      <Header getFlashcards={getFlashcards} setCurrentSelections={setCurrentSelections} collections={collections} currentCollection = {currentCollection} flashcards={flashcards}/>
       <Card flashcards={flashcards} currentCard={currentCard}/>
       <table>
         <tbody>

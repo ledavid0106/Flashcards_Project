@@ -26,12 +26,12 @@ const Card = ({flashcards,currentCard}) => {
     }
 
     return flashcards[0].word? (  
-        <div className="card-container" onClick = {handleClick}>
+        <div onClick = {handleClick}>
             <div className={classStyle}>
             {display}
             </div>
         </div>
-    ): <div className='card-container'>Please Pick a Collection Above</div>;
+    ): <div></div>;
 }
  
 export default Card;

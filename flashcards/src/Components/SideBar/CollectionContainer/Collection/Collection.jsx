@@ -6,8 +6,7 @@ const Collection = ({collection,setCurrentSelections}) => {
       <div onClick = {handleClick}>
         {collection.title}
       </div>
-        
-     );
+    );
 }
  
 export default Collection;
