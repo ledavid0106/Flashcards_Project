@@ -1,0 +1,24 @@
+.collections{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.grey {
+    color: rgb(228, 225, 225);
+}
+
+.text{
+    color: rgba(0, 0, 0, 0.742);
+    border-bottom: solid;
+    border-width: 1px;
+
+}
+
+.greycollections{
+    border-bottom: solid;
+    border-width: 1px;
+    color: rgb(228, 225, 225);
+    border-color: black;
+}

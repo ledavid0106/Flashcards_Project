@@ -65,11 +65,11 @@ const Header = ({currentCollection, getFlashcards, currentCard, flashcards, setC
             <table>
                 <tbody>
                     <tr className='header'>
-                        <td onClick = {handleAdd}>Add Card</td>
-                        <td className="white">testtesttest</td>
-                        <td onClick = {handleEdit}>Edit Card</td>
-                        <td className="white">testtesttest</td>
-                        <td  onClick = {handleDelete}>Delete Card</td>
+                        <td onClick = {handleAdd}>Add </td>
+                        <td className="white">testtesttesttesttesttest</td>
+                        <td onClick = {handleEdit}>Edit </td>
+                        <td className="white">testtesttesttesttesttest</td>
+                        <td  onClick = {handleDelete}>Delete </td>
                     </tr>
                 </tbody>
             </table>
