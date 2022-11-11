@@ -1,3 +1,9 @@
 .grey {
     color: rgb(228, 225, 225);
 }
+
+.border {
+    border-style: solid;
+    border-width: thin;
+    width: 200px;
+}

@@ -70,6 +70,8 @@ const CollectionContainer = ({getFlashcards, collections, getAllCollections, cur
                         </div>
                     </div>
                 </div>
+                <div className="grey">test</div>
+                <div className="grey">test</div>
                 <div onClick = {handleCreateCollection}>Add Collection</div>
             </div>
         </div>
