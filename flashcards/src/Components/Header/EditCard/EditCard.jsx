@@ -17,10 +17,12 @@ const EditCard = ({currentCard, currentCollection, flashcards, editCard, close})
         <form onSubmit = {handleSubmit}>
             <div >
                 <label>Word:</label>
+                <div></div>
                 <input type="text" value = {word} onChange = {(event)=> setWord(event.target.value)}/>
             </div>
             <div>
                 <label>Definition:</label>
+                <div></div>
                 <textarea value = {definition} onChange = {(event)=> setDefinition(event.target.value)}/>
             </div>
             <button type = 'submit'>Edit Card</button>

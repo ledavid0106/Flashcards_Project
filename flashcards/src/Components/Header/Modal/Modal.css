@@ -13,17 +13,17 @@
 
 
 .modal {
-    background-color: rgb(207, 209, 211);
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
     font-weight: bold;
 }
 
 .modal-header{
     font-size: larger;
-    padding-left:20px;
+    padding-left:2.5em;
     padding-right:20px;
     padding-top: 3px;
-    color:aliceblue;
+    color:rgb(0, 0, 0);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom: solid aliceblue;
@@ -31,7 +31,7 @@
     justify-content: space-between;
     align-items: center;
     gap :5em;
-    background-color: rgb(54, 79, 54);
+    background-color: #0AC6FF;
 }
 
 .modal-close-btn {
@@ -42,6 +42,8 @@
 .modal-body {
     padding: 3em;
     padding-top: 2em;
+    width: 300px;
+    
 }
 
 form {
