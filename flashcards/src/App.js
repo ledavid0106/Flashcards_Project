@@ -55,14 +55,16 @@ function App() {
         <CollectionContainer getFlashcards={getFlashcards} getAllCollections = {getAllCollections} setCurrentSelections={setCurrentSelections} collections={collections} setCurrentCard = {setCurrentCard} currentCollection = {currentCollection} setCurrentCollection = {setCurrentCollection} />
       </div>
       <div className='card'>
-        <Header currentCollection={currentCollection} getFlashcards ={getFlashcards} currentCard = {currentCard} flashcards = {flashcards} setCurrentCard = {setCurrentCard}/>
+        <Header className="header"currentCollection={currentCollection} getFlashcards ={getFlashcards} currentCard = {currentCard} flashcards = {flashcards} setCurrentCard = {setCurrentCard}/>
         <Card flashcards={flashcards} currentCard={currentCard}/>
-        <table>
-          <tbody>
-            <tr>
-              <td><NextPrev setCurrentCard={setCurrentCard} flashcards = {flashcards} currentCard = {currentCard} click = {prevFlashcard} text = 'PREV'></NextPrev></td>
-              <td><CardNumber flashcards={flashcards} currentCollection = {currentCollection} currentCard = {currentCard} /></td>
+        <table className='row'>
+          <tbody className='space'>
+            <tr className='space'>
+              <div >
+              <td ><NextPrev setCurrentCard={setCurrentCard} flashcards = {flashcards} currentCard = {currentCard} click = {prevFlashcard} text = 'PREV'></NextPrev></td>
+              <td className='border'><CardNumber flashcards={flashcards} currentCollection = {currentCollection} currentCard = {currentCard} /></td>
               <td><NextPrev setCurrentCard={setCurrentCard} flashcards = {flashcards} currentCard = {currentCard} click = {nextFlashcard} text = 'NEXT'></NextPrev></td>
+              </div>
             </tr>
           </tbody>
         </table>    

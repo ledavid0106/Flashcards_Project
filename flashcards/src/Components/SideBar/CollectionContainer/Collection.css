@@ -1,0 +1,10 @@
+.collections{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.grey {
+    color: rgb(228, 225, 225);
+}

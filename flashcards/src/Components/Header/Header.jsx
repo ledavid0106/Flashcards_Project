@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Modal from './Modal/Modal';
 import EditCard from './EditCard/EditCard';
 import DeleteCard from './DeleteCard/DeleteCard';
+import './Header.css';
 
 const Header = ({currentCollection, getFlashcards, currentCard, flashcards, setCurrentCard}) => {
     const [showAdd,setShowAdd] = useState(false)
@@ -63,9 +64,11 @@ const Header = ({currentCollection, getFlashcards, currentCard, flashcards, setC
             <div ></div>
             <table>
                 <tbody>
-                    <tr>
+                    <tr className='header'>
                         <td onClick = {handleAdd}>Add Card</td>
+                        <td className="white">testtesttest</td>
                         <td onClick = {handleEdit}>Edit Card</td>
+                        <td className="white">testtesttest</td>
                         <td  onClick = {handleDelete}>Delete Card</td>
                     </tr>
                 </tbody>

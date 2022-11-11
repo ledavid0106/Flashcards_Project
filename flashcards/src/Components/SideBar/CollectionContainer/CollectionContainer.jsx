@@ -4,6 +4,7 @@ import axios from 'axios';
 import AddCard from "../../Header/AddCard/AddCard";
 import AddCollection from "./AddCollection/AddCollection";
 import Modal from "../../Header/Modal/Modal";
+import './Collection.css'
 
 const CollectionContainer = ({getFlashcards, collections, getAllCollections, currentCollection, setCurrentCollection, setCurrentSelections}) => {
     const [showAdd,setShowAdd] = useState(false);
@@ -55,8 +56,10 @@ const CollectionContainer = ({getFlashcards, collections, getAllCollections, cur
             <div>
                 <div>
                     <div>Collections</div>
+                    <div className="grey">test</div>
+                    <div className="grey">test</div>
                     <div> 
-                        <div>
+                        <div className="collections">
                            {collections.map((collection,i) => {
                                return(
                                    <span key = {i}>

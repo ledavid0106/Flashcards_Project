@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import './Card.css';
 
 
 const Card = ({flashcards,currentCard}) => {
@@ -26,10 +27,12 @@ const Card = ({flashcards,currentCard}) => {
     }
 
     return flashcards[0].word? (  
+        <div className="bold">
         <div onClick = {handleClick}>
             <div className={classStyle}>
             {display}
             </div>
+        </div>
         </div>
     ): <div></div>;
 }
