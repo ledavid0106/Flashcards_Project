@@ -4,7 +4,7 @@ import Card from './Components/CardContainer/CardViewer/Card/Card';
 import CardNumber from './Components/CardContainer/CardViewer/CardNumber/CardNumber';
 import NextPrev from './Components/CardContainer/CardViewer/PrevNext/PrevNext';
 import Header from './Components/Header/Header';
-import CollectionBar from './Components/SideBar/CollectionContainer/CollectionContainer';
+import CollectionContainer from './Components/SideBar/CollectionContainer/CollectionContainer';
 
 function App() {
     const [collections,setCollections] = useState([]);
@@ -47,7 +47,9 @@ function App() {
 
   return (
     <div>
-      <CollectionBar setCurrentSelections={setCurrentSelections} collections={collections} currentCollection = {currentCollection} />
+      <CollectionContainer getFlashcards={getFlashcards} getAllCollections = {getAllCollections} setCurrentSelections={setCurrentSelections} 
+          collections={collections} setCurrentCard = {setCurrentCard} 
+          currentCollection = {currentCollection} setCurrentCollection = {setCurrentCollection} />
       <Header currentCollection={currentCollection} getFlashcards ={getFlashcards}
        currentCard = {currentCard} flashcards = {flashcards}
        setCurrentCard = {setCurrentCard}/>
