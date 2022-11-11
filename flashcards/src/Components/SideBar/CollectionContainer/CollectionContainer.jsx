@@ -63,7 +63,9 @@ const CollectionContainer = ({getFlashcards, collections, getAllCollections, cur
                            {collections.map((collection,i) => {
                                return(
                                    <span key = {i}>
+                                    <br></br>
                                     <Collection collection = {collection} setCurrentSelections = {setCurrentSelections}/>
+                                    
                                     </span>
                                 )
                             })} 
