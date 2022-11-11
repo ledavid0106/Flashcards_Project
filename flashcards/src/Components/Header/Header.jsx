@@ -3,6 +3,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import Modal from './Modal/Modal';
 import EditCard from './EditCard/EditCard';
+import DeleteCard from './DeleteCard/DeleteCard';
 
 const Header = ({currentCollection, getFlashcards, currentCard, flashcards, setCurrentCard}) => {
     const [showAdd,setShowAdd] = useState(false)
@@ -31,6 +32,21 @@ const Header = ({currentCollection, getFlashcards, currentCard, flashcards, setC
         }
     }
 
+    const [showDelete,setShowDelete] = useState(false)
+    const handleDelete = () => {
+        if (!showDelete) {setShowDelete(true);}
+        else {setShowDelete(false);}
+    }
+    async function deleteCard() {
+        let endpoint = 'http://127.0.0.1:8000/api/collections/' + currentCollection.id +'/cards/' +flashcards[currentCard].id + '/'
+        const response = await axios.delete(endpoint)
+        if (response.status === 204){
+            if(currentCard != 0){
+                setCurrentCard(currentCard-1);
+            }
+            getFlashcards(currentCollection.id);
+        }
+    } 
     return ( 
         <div>
             <Modal title = 'Add Card' onClose={handleAdd} show ={showAdd}>
@@ -40,14 +56,17 @@ const Header = ({currentCollection, getFlashcards, currentCard, flashcards, setC
                 <EditCard close = {handleEdit}  currentCard ={currentCard} currentCollection={currentCollection} 
                 editCard = {editCard} flashcards = {flashcards}/>
             </Modal>
-
+            <Modal title = 'Delete Card' onClose = {handleDelete} show ={showDelete}>
+                <DeleteCard close = {handleDelete} deleteCard = {deleteCard} 
+                currentCard = {currentCard} flashcards = {flashcards}/>
+            </Modal>
             <div >Flashcards</div>
             <table>
                 <tbody>
                     <tr>
                         <td onClick = {handleAdd}>Add Card</td>
                         <td onClick = {handleEdit}>Edit Card</td>
-                        <td >Delete Card</td>
+                        <td  onClick = {handleDelete}>Delete Card</td>
                     </tr>
                 </tbody>
             </table>
