@@ -6,6 +6,7 @@ import NextPrev from './Components/CardContainer/CardViewer/PrevNext/PrevNext';
 import Header from './Components/Header/Header';
 import CollectionContainer from './Components/SideBar/CollectionContainer/CollectionContainer';
 import './App.css';
+import Nav from './Components/Nav/Nav';
 
 function App() {
     const [collections,setCollections] = useState([]);
@@ -47,8 +48,12 @@ function App() {
     }
 
   return (
+    <div>
+    <Nav/>
     <div className='whole'>
-      <CollectionContainer getFlashcards={getFlashcards} getAllCollections = {getAllCollections} setCurrentSelections={setCurrentSelections} collections={collections} setCurrentCard = {setCurrentCard} currentCollection = {currentCollection} setCurrentCollection = {setCurrentCollection} />
+      <div className="container">
+        <CollectionContainer getFlashcards={getFlashcards} getAllCollections = {getAllCollections} setCurrentSelections={setCurrentSelections} collections={collections} setCurrentCard = {setCurrentCard} currentCollection = {currentCollection} setCurrentCollection = {setCurrentCollection} />
+      </div>
       <div className='card'>
         <Header currentCollection={currentCollection} getFlashcards ={getFlashcards} currentCard = {currentCard} flashcards = {flashcards} setCurrentCard = {setCurrentCard}/>
         <Card flashcards={flashcards} currentCard={currentCard}/>
@@ -62,6 +67,7 @@ function App() {
           </tbody>
         </table>    
         </div>
+      </div>
       </div>
   );
 }
