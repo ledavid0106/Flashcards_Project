@@ -5,6 +5,7 @@ import CardNumber from './Components/CardContainer/CardViewer/CardNumber/CardNum
 import NextPrev from './Components/CardContainer/CardViewer/PrevNext/PrevNext';
 import Header from './Components/Header/Header';
 import CollectionContainer from './Components/SideBar/CollectionContainer/CollectionContainer';
+import './App.css';
 
 function App() {
     const [collections,setCollections] = useState([]);
@@ -46,25 +47,22 @@ function App() {
     }
 
   return (
-    <div>
-      <CollectionContainer getFlashcards={getFlashcards} getAllCollections = {getAllCollections} setCurrentSelections={setCurrentSelections} 
-          collections={collections} setCurrentCard = {setCurrentCard} 
-          currentCollection = {currentCollection} setCurrentCollection = {setCurrentCollection} />
-      <Header currentCollection={currentCollection} getFlashcards ={getFlashcards}
-       currentCard = {currentCard} flashcards = {flashcards}
-       setCurrentCard = {setCurrentCard}/>
-      <Card flashcards={flashcards} currentCard={currentCard}/>
-      <table>
-        <tbody>
-          <tr>
-            <td><NextPrev setCurrentCard={setCurrentCard} flashcards = {flashcards} currentCard = {currentCard} click = {prevFlashcard} text = 'PREV'></NextPrev></td>
-            <td><CardNumber flashcards={flashcards} currentCollection = {currentCollection} currentCard = {currentCard} /></td>
-            <td><NextPrev setCurrentCard={setCurrentCard} flashcards = {flashcards} currentCard = {currentCard} click = {nextFlashcard} text = 'NEXT'></NextPrev></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    
+    <div className='whole'>
+      <CollectionContainer getFlashcards={getFlashcards} getAllCollections = {getAllCollections} setCurrentSelections={setCurrentSelections} collections={collections} setCurrentCard = {setCurrentCard} currentCollection = {currentCollection} setCurrentCollection = {setCurrentCollection} />
+      <div className='card'>
+        <Header currentCollection={currentCollection} getFlashcards ={getFlashcards} currentCard = {currentCard} flashcards = {flashcards} setCurrentCard = {setCurrentCard}/>
+        <Card flashcards={flashcards} currentCard={currentCard}/>
+        <table>
+          <tbody>
+            <tr>
+              <td><NextPrev setCurrentCard={setCurrentCard} flashcards = {flashcards} currentCard = {currentCard} click = {prevFlashcard} text = 'PREV'></NextPrev></td>
+              <td><CardNumber flashcards={flashcards} currentCollection = {currentCollection} currentCard = {currentCard} /></td>
+              <td><NextPrev setCurrentCard={setCurrentCard} flashcards = {flashcards} currentCard = {currentCard} click = {nextFlashcard} text = 'NEXT'></NextPrev></td>
+            </tr>
+          </tbody>
+        </table>    
+        </div>
+      </div>
   );
 }
 

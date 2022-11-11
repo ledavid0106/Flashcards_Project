@@ -60,7 +60,7 @@ const Header = ({currentCollection, getFlashcards, currentCard, flashcards, setC
                 <DeleteCard close = {handleDelete} deleteCard = {deleteCard} 
                 currentCard = {currentCard} flashcards = {flashcards}/>
             </Modal>
-            <div >Flashcards</div>
+            <div ></div>
             <table>
                 <tbody>
                     <tr>

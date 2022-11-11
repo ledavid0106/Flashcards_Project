@@ -1,0 +1,10 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.whole{
+    display: flex;
+    justify-content: space-between;
+}
