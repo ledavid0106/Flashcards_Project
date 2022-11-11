@@ -55,7 +55,7 @@ const CollectionContainer = ({getFlashcards, collections, getAllCollections, cur
         <div>
             <div>
                 <div>
-                    <div>Collections</div>
+                    <div>{currentCollection.title} Collections</div>
                     {/* <div className="grey">test</div> */}
                     <div className="greycollections">test</div>
                     <div> 

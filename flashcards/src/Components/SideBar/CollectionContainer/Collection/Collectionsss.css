@@ -7,3 +7,12 @@
     border-width: thin;
     width: 200px;
 }
+.border:focus {
+    background-color: aquamarine;
+}
+.border:active {
+    background-color: aquamarine;
+}
+.border:target {
+    background-color: aquamarine;
+}
