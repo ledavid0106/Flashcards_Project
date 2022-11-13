@@ -1,9 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Card from './Components/CardContainer/CardViewer/Card/Card';
-import CardNumber from './Components/CardContainer/CardViewer/CardNumber/CardNumber';
-import NextPrev from './Components/CardContainer/CardViewer/PrevNext/PrevNext';
-import Header from './Components/Header/Header';
+import CardNumber from './Components/CardContainer/CardViewer/CardFooter/CardNumber/CardNumber';
+import NextPrev from './Components/CardContainer/CardViewer/CardFooter/PrevNext/PrevNext';
+import Header from './Components/CardContainer/CardViewer/CardHeader/Header';
+
+
+
 import CollectionContainer from './Components/SideBar/CollectionContainer/CollectionContainer';
 import './App.css';
 import Nav from './Components/Nav/Nav';

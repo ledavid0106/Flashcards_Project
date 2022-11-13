@@ -1,9 +1,9 @@
 import Collection from "./Collection/Collection";
 import React, { useState } from 'react';
 import axios from 'axios';
-import AddCard from "../../Header/AddCard/AddCard";
+import AddCard from "../../CardContainer/CardViewer/CardHeader/AddCard/AddCard";
 import AddCollection from "./AddCollection/AddCollection";
-import Modal from "../../Header/Modal/Modal";
+import Modal from "../../CardContainer/CardViewer/CardHeader/Modal/Modal";
 import './CollectionContain.css'
 
 const CollectionContainer = ({getFlashcards, collections, getAllCollections, currentCollection, setCurrentCollection, setCurrentSelections}) => {
