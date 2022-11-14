@@ -1,7 +1,5 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-
-
 import CollectionContainer from './Components/CollectionContainer/CollectionContainer';
 import './App.css';
 import Nav from './Components/Nav/Nav';
@@ -31,9 +29,7 @@ function App() {
       setCurrentCollection(collection);
       getFlashcards(collection.id);
       setCurrentCard(0);
-
     }
-
 
   return (
     <div>
@@ -42,7 +38,7 @@ function App() {
       <div className="container">
         <CollectionContainer getFlashcards={getFlashcards} getAllCollections = {getAllCollections} setCurrentSelections={setCurrentSelections} collections={collections} setCurrentCard = {setCurrentCard} currentCollection = {currentCollection} setCurrentCollection = {setCurrentCollection} />
       </div>
-      <CardContainer flashcards={flashcards}  getFlashcards={getFlashcards} currentCard={currentCard} setCurrentCard={setCurrentCard} currentCollection={currentCollection}/>
+        <CardContainer flashcards={flashcards}  getFlashcards={getFlashcards} currentCard={currentCard} setCurrentCard={setCurrentCard} currentCollection={currentCollection}/>
       </div>
       </div>
   );
