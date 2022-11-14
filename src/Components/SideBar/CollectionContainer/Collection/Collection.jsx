@@ -2,6 +2,7 @@ import "./Collectionsss.css"
 const Collection = ({collection,setCurrentSelections}) => {
     const handleClick = () => {
         setCurrentSelections(collection);
+        
 
     }
     return ( 
