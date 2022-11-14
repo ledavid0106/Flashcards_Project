@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
 
-import CollectionContainer from './Components/SideBar/CollectionContainer/CollectionContainer';
+import CollectionContainer from './Components/CollectionContainer/CollectionContainer';
 import './App.css';
 import Nav from './Components/Nav/Nav';
 import CardContainer from './Components/CardContainer/CardContainer';
