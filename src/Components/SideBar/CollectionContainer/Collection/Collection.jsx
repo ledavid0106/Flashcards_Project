@@ -1,12 +1,13 @@
 import "./Collectionsss.css"
 const Collection = ({collection,setCurrentSelections}) => {
-    const handleClick = () => {
-        setCurrentSelections(collection);
-        
+  const handleClick = () => {
+        setCurrentSelections(collection);      
 
     }
+    
+
     return ( 
-      <div className="border" onClick = {handleClick}>
+      <div className="border" id ="btn"onClick = {handleClick}>
         {collection.title}
         <div className="grey">test</div>
       </div>
